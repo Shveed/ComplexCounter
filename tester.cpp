@@ -1,33 +1,44 @@
-#ifndef COMPLEX_H
-#define COMPLEX_H
-#include <cmath>
-#include <string.h>
+#include "complex.h"
 #include "stdafx.h"
+#include <cstring>
 #include <iostream>
 using namespace std;
 
-typedef struct complex *Complex;
-
-typedef struct complex{
-	int real = 0;
-	int imag = 0;
-};
-
-void printMenu();
-void printResult(complex *c3);
-
-char whichOp(char op);
-
-complex complexCreate(complex *c1);
-
-complex complexAdd(complex *c1, complex *c2, complex *c3);
-//complex complexSub(double c1, double c2);
-//complex complexMult(double c1, double c2);
-//complex complexDiv(double c1, double c2);
-void printError();
-
-//complex complexCreateFromPolar(double absVal, double arg);
-//int complexToString(complex c, char buffer[], int size);
+int main()
+{
+	char op = 0;
+	
+	complex c1;
+	complex c2;
+	complex c3;
 
 
-#endif COMPLEX_H
+	printMenu();
+	whichOp(op);
+	switch (op)
+	{
+	case '+':
+		c1 = complexCreate(&c1);
+		c2 = complexCreate(&c2);
+		c3 = complexAdd(&c1, &c2, &c3);
+		break;
+	case '-':
+		//complexSub();
+		break;
+	case '*':
+		//complexMult();
+		break;
+	case '/':
+		//complexDiv();
+		break;
+	default:
+		printError();
+	printResult(&c3);
+	}
+
+
+
+
+
+
+}
