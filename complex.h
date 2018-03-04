@@ -8,22 +8,26 @@ using namespace std;
 
 typedef struct complex *Complex;
 
-typedef struct complex{
-	int real = 0;
-	int imag = 0;
-};
+typedef struct complex {
+	double real = 0;
+	double imag = 0;
+}complex;
 
 void printMenu();
-void printResult(complex *c3);
+void printResult(double real, double imag);
 
 char whichOp(char op);
 
-complex complexCreate(complex *c1);
+complex complexCreate(Complex c1, Complex c2);
 
-complex complexAdd(complex *c1, complex *c2, complex *c3);
-//complex complexSub(double c1, double c2);
-//complex complexMult(double c1, double c2);
-//complex complexDiv(double c1, double c2);
+complex complexAdd(complex *c1, complex *c2);
+
+complex complexSub(complex *c1, complex *c2);
+
+complex complexMult(complex *c1, complex *c2);
+
+complex complexDiv(complex *c1, complex *c2);
+
 void printError();
 
 //complex complexCreateFromPolar(double absVal, double arg);
