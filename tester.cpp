@@ -1,44 +1,42 @@
-#include "complex.h"
 #include "stdafx.h"
+#include "Complex.h"
 #include <cstring>
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	char op = 0;
-	
-	complex c1;
-	complex c2;
-	complex c3;
+	char oper = ' ';
 
+	complex c1, c2, c3;
 
 	printMenu();
-	whichOp(op);
-	switch (op)
+	oper = whichOp(oper);
+	switch (oper)
 	{
 	case '+':
-		c1 = complexCreate(&c1);
-		c2 = complexCreate(&c2);
-		c3 = complexAdd(&c1, &c2, &c3);
+		complexCreate(&c1, &c2);
+		c3 = complexAdd(&c1, &c2);
+		printResult(c3.real, c3.imag);
 		break;
 	case '-':
-		//complexSub();
+		complexCreate(&c1, &c2);
+		complexSub(&c1, &c2);
+		printResult(c3.real, c3.imag);
 		break;
 	case '*':
-		//complexMult();
+		complexCreate(&c1, &c2);
+		complexMult(&c1, &c2);
+		printResult(c3.real, c3.imag);
 		break;
 	case '/':
-		//complexDiv();
+		complexCreate(&c1, &c2);
+		complexDiv(&c1, &c2);
+		printResult(c3.real, c3.imag);
 		break;
 	default:
-		printError();
-	printResult(&c3);
+			printError();
+			break;
 	}
-
-
-
-
-
-
+	return 0;
 }
