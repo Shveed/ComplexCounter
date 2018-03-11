@@ -12,17 +12,14 @@ void printMenu()
 	cout << "- - substraction(-)" << endl;
 	cout << "* - multiplication(*)" << endl;
 	cout << "/ - division(/)" << endl;
+	cout << "M - module(m)" << endl;
 	cout << "------------------------------------" << endl;
 };
 
-complex complexCreate(Complex c1, Complex c2)
+Complex complexCreate(Complex c1)
 {
-	cout << "Enter real and imaginal coordinates." << endl;
-	cout << "Complex 1: ";
 	cin >> c1->real >> c1->imag;
-	cout << "Complex 2: ";
-	cin >> c2->real >> c2->imag;
-	return *c1, *c2;
+	return c1;
 };
 
 char whichOp(char op)
@@ -62,6 +59,16 @@ complex complexDiv(complex *c1, complex *c2)
 	c.real = (c1->real * c2->real + c1->imag * c2->imag) / (pow(c2->real, 2) + pow(c2->imag, 2));
 	c.imag = (c1->imag * c2->real - c1->real * c2->imag) / (pow(c2->real, 2) + pow(c2->imag, 2));
 	return c;
+}
+
+double complexModule(complex *c1)
+{
+	cout << "Enter complex: ";
+	cin >> c1->real >> c1->imag;
+	double m;
+	m = sqrt(pow(c1->real, 2) + pow(c1->imag, 2));
+	cout << "Module of your complex equals to: " << m << endl;
+	return m;
 }
 
 //complex complexCreateFromPolar(double absVal, double arg);
