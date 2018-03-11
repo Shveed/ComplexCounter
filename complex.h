@@ -18,7 +18,7 @@ void printResult(double real, double imag);
 
 char whichOp(char op);
 
-complex complexCreate(Complex c1, Complex c2);
+Complex complexCreate(Complex c1);
 
 complex complexAdd(complex *c1, complex *c2);
 
@@ -27,6 +27,8 @@ complex complexSub(complex *c1, complex *c2);
 complex complexMult(complex *c1, complex *c2);
 
 complex complexDiv(complex *c1, complex *c2);
+
+double complexModule(complex *c1);
 
 void printError();
 
