@@ -56,7 +56,6 @@ int main()
 		printError();
 		break;
 	}
-	return 0;
 	delete c1;
 	delete c2;
 }
